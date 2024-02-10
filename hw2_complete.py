@@ -190,33 +190,33 @@ if __name__ == '__main__':
   ## Build and train model 1
   model1 = build_model1()
   # compile and train model 1.
-  #model1.compile(optimizer='adam',
-   #           loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
-    #          metrics=['accuracy'])
+  model1.compile(optimizer='adam',
+              loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
+              metrics=['accuracy'])
   
-  #train_hist_plain = model1.fit(train_images, train_labels, 
-   #                    validation_data=(val_images, val_labels),
-    #                   epochs=50)
+  train_hist_plain = model1.fit(train_images, train_labels, 
+                       validation_data=(val_images, val_labels),
+                       epochs=50)
   ## Build, compile, and train model 2 (DS Convolutions)
   model2 = build_model2()
-  #model2.compile(optimizer='adam',
-   #           loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
-    #          metrics=['accuracy'])
+  model2.compile(optimizer='adam',
+           loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
+              metrics=['accuracy'])
   
-  #train_hist_plain = model2.fit(train_images, train_labels, 
-   #                    validation_data=(val_images, val_labels),
-    #                   epochs=50)
+  train_hist_plain = model2.fit(train_images, train_labels, 
+                       validation_data=(val_images, val_labels),
+                       epochs=50)
   
   ### Repeat for model 3 and your best sub-50k params model
   
   model3 = build_model3()
-  #model3.compile(optimizer='adam',
-   #           loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
-    #          metrics=['accuracy'])
+  model3.compile(optimizer='adam',
+              loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
+              metrics=['accuracy'])
   
-  #train_hist_plain = model3.fit(train_images, train_labels, 
-   #                    validation_data=(val_images, val_labels),
-    #                   epochs=50)
+  train_hist_plain = model3.fit(train_images, train_labels, 
+                       validation_data=(val_images, val_labels),
+                       epochs=50)
   
   model50k = build_model50k()
   model50k.compile(optimizer='adam',
@@ -225,6 +225,6 @@ if __name__ == '__main__':
   
   train_hist_plain = model50k.fit(train_images, train_labels, 
                        validation_data=(val_images, val_labels),
-                       epochs=15)
+                       epochs=50)
   
   model50k.save("best_model.h5")
